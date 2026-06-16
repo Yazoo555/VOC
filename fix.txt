@@ -1,0 +1,78 @@
+### Website Improvement Requirements
+
+#### 1. Hero Section Statistics Cards
+
+* Increase the size and visibility of the statistics cards displayed on the hero section.
+* The cards containing:
+
+  * **5000+ Patients Served**
+  * **10+ Years of Experience**
+  * **98% Patient Satisfaction**
+
+  currently appear too small and are not visually prominent. Make them larger, improve spacing, and enhance their visual hierarchy so they stand out better on the homepage.
+
+---
+
+#### 2. Testimonials Section ("What Our Patients Say")
+
+* Remove the existing testimonials.
+* Replace them with the following verified customer reviews:
+
+**Prabesh Tamang**
+
+> As someone who has struggled with vision issues for over two years, I can confidently say that Vision Optical Center in Madhyapur Thimi is one of the best eye care clinics I have visited. The staff is friendly, attentive, and takes the time to understand each patient's needs. The eye examination was thorough, and the optometrist explained every detail clearly. They also offer an excellent selection of eyewear, and the team patiently assisted me in finding the perfect pair of glasses. I am extremely satisfied with my experience and highly recommend Vision Optical Center to anyone seeking quality eye care services.
+
+**Anuj Paudel**
+
+> As a regular customer, I can confidently say that Vision Optical Center is one of the best eye clinics in Madhyapur Thimi. Their optometrists are knowledgeable, professional, and consistently provide excellent eye care services. They prioritize patient eye health and ensure every customer leaves satisfied with their experience.
+
+**Ismita Shrestha**
+
+> Extremely friendly staff, a clean environment, and modern facilities. I was very satisfied with the professional consultation and guidance provided. Vision Optical Center is truly an excellent destination for quality eye care services.
+
+---
+
+#### 3. About & Services Sections
+
+* Improve the visual design of the cards used in:
+
+  * About Section
+  * Services Section
+  * Eye Exams
+  * Eyewear
+  * Contact Lens Services
+
+* The current icons/stickers do not align with the overall professional healthcare branding. Replace them with more modern, premium, and eye-care-related icons.
+
+* Increase the size of the cards and improve their layout.
+
+* Reduce unnecessary gaps and whitespace between cards to create a more balanced and cohesive design.
+
+* Ensure all cards maintain consistent dimensions, alignment, and spacing across desktop and mobile devices.
+
+---
+
+#### 4. Gallery Section
+
+* Remove images that are not directly related to the clinic, eye care services, optical products, or patient experience.
+
+* Replace them with high-quality and relevant images such as:
+
+  * Eye examinations
+  * Optometrists conducting consultations
+  * Modern diagnostic equipment
+  * Eyeglass collections and frames
+  * Contact lens services
+  * Clinic interior and facilities
+  * Customer interactions and patient care
+
+* Maintain a consistent visual style throughout the gallery to strengthen the clinic's professional brand identity.
+
+---
+
+#### 5. Overall UI/UX Enhancements
+
+* Improve spacing, alignment, and responsiveness throughout the homepage.
+* Ensure sections feel visually connected and balanced.
+* Maintain a clean, modern, and professional healthcare-focused design.
+* Optimize all cards, icons, and images for both desktop and mobile viewing experiences.
