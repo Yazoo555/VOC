@@ -19,6 +19,11 @@
       a.classList.toggle('active', a.dataset.page === page);
     });
 
+    // Update mobile nav active state
+    document.querySelectorAll('.mobile-nav a').forEach(function (a) {
+      a.classList.toggle('active', a.dataset.page === page);
+    });
+
     currentPage = page;
 
     // Update page meta tags for SEO (title, description, canonical, OG, Twitter)
@@ -132,15 +137,33 @@
     if (twDesc) twDesc.content = meta.desc;
   }
 
-  /* Mobile Navigation */
-  window.openMobileNav = function () {
-    document.getElementById('mobileNav').classList.add('open');
-    document.body.style.overflow = 'hidden';
+  /* Mobile Navigation — Toggle */
+  window.toggleMobileNav = function () {
+    var nav = document.getElementById('mobileNav');
+    var overlay = document.getElementById('mobileNavOverlay');
+    var btn = document.querySelector('.hamburger');
+    var isOpen = nav.classList.contains('open');
+    if (isOpen) {
+      nav.classList.remove('open');
+      overlay.classList.remove('open');
+      document.body.style.overflow = '';
+      if (btn) btn.setAttribute('aria-expanded', 'false');
+    } else {
+      nav.classList.add('open');
+      overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      if (btn) btn.setAttribute('aria-expanded', 'true');
+    }
   };
 
   window.closeMobileNav = function () {
-    document.getElementById('mobileNav').classList.remove('open');
+    var nav = document.getElementById('mobileNav');
+    var overlay = document.getElementById('mobileNavOverlay');
+    nav.classList.remove('open');
+    overlay.classList.remove('open');
     document.body.style.overflow = '';
+    var btn = document.querySelector('.hamburger');
+    if (btn) btn.setAttribute('aria-expanded', 'false');
   };
 
   /* Scroll Effects — Nav background */

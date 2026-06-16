@@ -251,6 +251,19 @@ p {
 .nav-links a.active {
   color: var(--color-primary);
   font-weight: 600;
+  position: relative;
+}
+
+.nav-links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 16px;
+  height: 2px;
+  background: var(--color-primary);
+  border-radius: 1px;
 }
 
 .nav-cta {
@@ -1769,47 +1782,98 @@ footer {
   font-weight: 700;
 }
 
-/* 27. Mobile Nav */
-.mobile-nav {
+/* 27. Mobile Nav — Drawer Panel */
+.mobile-nav-overlay {
   position: fixed;
   inset: 0;
-  z-index: 999;
-  background: rgba(250, 250, 248, 0.98);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
+  z-index: 998;
+  background: rgba(0, 0, 0, 0.3);
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
 }
 
-.mobile-nav.open {
+.mobile-nav-overlay.open {
   opacity: 1;
   pointer-events: all;
 }
 
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(85vw, 340px);
+  z-index: 999;
+  background: var(--color-bg-alt);
+  display: flex;
+  flex-direction: column;
+  padding: 100px 32px 40px;
+  gap: 4px;
+  transform: translateX(100%);
+  transition: transform 0.35s var(--ease-out);
+  box-shadow: -8px 0 32px rgba(0, 0, 0, 0.08);
+  overflow-y: auto;
+}
+
+.mobile-nav.open {
+  transform: translateX(0);
+}
+
 .mobile-nav a {
-  font-size: 28px;
-  font-weight: 600;
-  color: var(--color-primary);
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--color-text-muted);
   text-decoration: none;
-  padding: 8px 0;
-  letter-spacing: -0.02em;
+  padding: 14px 20px;
+  border-radius: 10px;
+  letter-spacing: -0.01em;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.mobile-nav a:hover {
+  color: var(--color-primary);
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.mobile-nav a.active {
+  color: var(--color-primary);
+  font-weight: 600;
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.mobile-nav a.active::after {
+  content: '';
+  position: absolute;
+  left: 20px;
+  bottom: 6px;
+  width: 16px;
+  height: 2px;
+  background: var(--color-primary);
+  border-radius: 1px;
 }
 
 .mobile-close {
   position: absolute;
   top: 24px;
   right: 24px;
-  font-size: 24px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
   cursor: pointer;
   color: var(--color-primary);
-  background: none;
-  border: none;
+  background: var(--color-bg);
+  border: 1px solid var(--color-neutral);
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+.mobile-close:hover {
+  background: var(--color-neutral);
 }
 
 /* 28. Reveal Animation */
@@ -2012,24 +2076,78 @@ footer {
     margin-bottom: 20px;
   }
 
+  /* Eye Exams — mobile adjustments */
   .exam-step {
     flex-direction: column;
-    gap: 16px;
-    padding: 32px;
+    gap: 12px;
+    padding: 28px 24px;
+  }
+
+  .exam-step-num {
+    font-size: 36px;
+  }
+
+  .exam-step-title {
+    font-size: 18px;
+  }
+
+  .exam-step-desc {
+    font-size: 15px;
+  }
+
+  .conditions-grid {
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 40px;
+    gap: 12px;
+  }
+
+  .condition-card {
+    padding: 28px 24px;
+  }
+
+  .condition-icon {
+    width: 56px;
+    height: 56px;
+    margin-bottom: 14px;
+  }
+
+  .condition-title {
+    font-size: 15px;
+  }
+
+  .condition-desc {
+    font-size: 14px;
+  }
+
+  /* Eyewear page — mobile adjustments */
+  .lens-types {
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 40px;
+    gap: 12px;
+  }
+
+  .lens-card {
+    padding: 28px 24px 28px;
+  }
+
+  .lens-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 16px;
+  }
+
+  .lens-title {
+    font-size: 16px;
+  }
+
+  .lens-desc {
+    font-size: 14px;
   }
 
   .service-page-card {
     flex-direction: column;
     padding: 36px;
     gap: 20px;
-  }
-
-  .condition-card {
-    padding: 32px 28px;
-  }
-
-  .lens-card {
-    padding: 36px 28px 32px;
   }
 
   .cl-card {
@@ -2073,16 +2191,6 @@ footer {
     gap: 16px;
   }
 
-  .conditions-grid {
-    margin-top: 40px;
-    gap: 12px;
-  }
-
-  .lens-types {
-    margin-top: 40px;
-    gap: 12px;
-  }
-
   .cl-types {
     margin-top: 40px;
     gap: 16px;
@@ -2106,6 +2214,38 @@ footer {
   .values-grid {
     grid-template-columns: 1fr;
   }
+
+  /* Eye Exams — narrow mobile */
+  .conditions-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .exam-step {
+    padding: 24px 20px;
+  }
+
+  .exam-step-num {
+    font-size: 32px;
+  }
+
+  .condition-card {
+    padding: 24px 20px;
+  }
+
+  /* Eyewear — narrow mobile */
+  .lens-types {
+    grid-template-columns: 1fr;
+  }
+
+  .lens-card {
+    padding: 24px 20px;
+  }
+
+  .lens-icon {
+    width: 52px;
+    height: 52px;
+    margin-bottom: 14px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -2119,5 +2259,4 @@ footer {
 
   html {
     scroll-behavior: auto;
-  }
-}
+  }}

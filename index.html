@@ -120,23 +120,26 @@
       <a href="#faq" onclick="navigate('faq')" data-page="faq">FAQ</a>
       <a href="#contact" onclick="navigate('contact')" data-page="contact" class="nav-cta">Book Now</a>
     </div>
-    <button class="hamburger" onclick="openMobileNav()" aria-label="Open navigation menu">
+    <button class="hamburger" onclick="toggleMobileNav()" aria-label="Open navigation menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </nav>
 
+  <!-- Mobile Navigation Overlay -->
+  <div class="mobile-nav-overlay" id="mobileNavOverlay" onclick="closeMobileNav()" aria-hidden="true"></div>
+
   <!-- Mobile Navigation -->
   <div class="mobile-nav" id="mobileNav" role="dialog" aria-label="Mobile navigation">
     <button class="mobile-close" onclick="closeMobileNav()" aria-label="Close navigation menu">✕</button>
-    <a href="#home" onclick="navigate('home');closeMobileNav()">Home</a>
-    <a href="#about" onclick="navigate('about');closeMobileNav()">About</a>
-    <a href="#services" onclick="navigate('services');closeMobileNav()">Services</a>
-    <a href="#exams" onclick="navigate('exams');closeMobileNav()">Eye Exams</a>
-    <a href="#glasses" onclick="navigate('glasses');closeMobileNav()">Eyewear</a>
-    <a href="#lenses" onclick="navigate('lenses');closeMobileNav()">Contact Lenses</a>
-    <a href="#gallery" onclick="navigate('gallery');closeMobileNav()">Gallery</a>
-    <a href="#faq" onclick="navigate('faq');closeMobileNav()">FAQ</a>
-    <a href="#contact" onclick="navigate('contact');closeMobileNav()">Contact</a>
+    <a href="#home" onclick="navigate('home');closeMobileNav()" data-page="home" class="active">Home</a>
+    <a href="#about" onclick="navigate('about');closeMobileNav()" data-page="about">About</a>
+    <a href="#services" onclick="navigate('services');closeMobileNav()" data-page="services">Services</a>
+    <a href="#exams" onclick="navigate('exams');closeMobileNav()" data-page="exams">Eye Exams</a>
+    <a href="#glasses" onclick="navigate('glasses');closeMobileNav()" data-page="glasses">Eyewear</a>
+    <a href="#lenses" onclick="navigate('lenses');closeMobileNav()" data-page="lenses">Contact Lenses</a>
+    <a href="#gallery" onclick="navigate('gallery');closeMobileNav()" data-page="gallery">Gallery</a>
+    <a href="#faq" onclick="navigate('faq');closeMobileNav()" data-page="faq">FAQ</a>
+    <a href="#contact" onclick="navigate('contact');closeMobileNav()" data-page="contact">Contact</a>
   </div>
 
   <!-- ==================== HOME PAGE ==================== -->
